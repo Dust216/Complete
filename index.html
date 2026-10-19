@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro1 Inspections | South Florida Property Inspections</title>
+
+    <!-- 1. Google Fonts: Montserrat (Weights: 400, 600, 700, 800) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- 2. FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- 3. Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        brandRed: '#e52322', // Primary brand red
+                        brandRedHover: '#c81b1a',
+                        brandDark: '#0e1118',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-black text-white font-sans antialiased m-0 p-0 selection:bg-brandRed selection:text-white">
+
+    <!-- HERO SECTION CONTAINER -->
+    <div class="relative min-h-screen flex flex-col justify-between overflow-hidden">
+
+        <!-- BACKGROUND LAYER: Image & Readability Gradients -->
+        <div class="absolute inset-0 z-0">
+            <!-- 
+                Image Source Options:
+                Option A (Recommended): Place the image in the same directory as this index.html file:
+                src="Luxury Inspection Truck at Sunset.png"
+                
+                Option B: Direct local file path URL:
+                src="file:///C:/Users/dusti/OneDrive/Desktop/Complete/Luxury%20Inspection%20Truck%20at%20Sunset.png"
+            -->
+            <img 
+                src="Luxury Inspection Truck at Sunset.png" 
+                alt="Pro1 Inspections Truck at Sunset" 
+                class="w-full h-full object-cover object-center"
+            >
+
+            <!-- Dark gradient overlay from left-to-right to ensure text contrast -->
+            <div class="absolute inset-0 bg-gradient-to-r from-black via-black/85 md:via-black/75 to-transparent"></div>
+
+            <!-- Soft top and bottom vignetting for header and footer readability -->
+            <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/90"></div>
+        </div>
+
+        <!-- HEADER / NAVIGATION -->
+        <header class="relative z-10 w-full px-4 sm:px-8 lg:px-14 py-5 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <a href="#" class="flex flex-col">
+                <div class="text-2xl sm:text-3xl font-black tracking-tight leading-none">
+                    PRO<span class="text-brandRed">#1</span>
+                </div>
+                <div class="text-[9px] sm:text-[10px] tracking-[0.28em] font-semibold text-gray-300 uppercase mt-0.5">
+                    Inspections
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden xl:flex items-center gap-7 text-[13px] font-semibold tracking-wide">
+                <a href="#home" class="text-brandRed border-b-2 border-brandRed pb-1">Home</a>
+                <a href="#services" class="text-gray-200 hover:text-white transition flex items-center gap-1.5">
+                    Services <i class="fa-solid fa-chevron-down text-[10px] text-gray-400"></i>
+                </a>
+                <a href="#about" class="text-gray-200 hover:text-white transition">About Us</a>
+                <a href="#pricing" class="text-gray-200 hover:text-white transition">Pricing</a>
+                <a href="#sample-report" class="text-gray-200 hover:text-white transition">Sample Report</a>
+                <a href="#faq" class="text-gray-200 hover:text-white transition">FAQ</a>
+                <a href="#contact" class="text-gray-200 hover:text-white transition">Contact</a>
+            </nav>
+
+            <!-- Phone Contact & CTA Button -->
+            <div class="flex items-center gap-5 sm:gap-7">
+                <!-- Phone Info -->
+                <a href="tel:7722721600" class="flex items-center gap-3 text-left group">
+                    <i class="fa-solid fa-phone text-brandRed text-base sm:text-lg group-hover:scale-110 transition-transform"></i>
+                    <div>
+                        <div class="text-xs sm:text-sm font-bold tracking-tight text-white group-hover:text-brandRed transition">
+                            (772) 272-1600
+                        </div>
+                        <div class="text-[9px] tracking-wider font-semibold text-gray-400 uppercase">
+                            Call or Text
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Header Booking Button -->
+                <a href="#schedule" class="hidden sm:inline-flex items-center gap-2 bg-brandRed hover:bg-brandRedHover text-white text-[11px] font-bold uppercase tracking-wider px-4 py-2.5 rounded transition shadow-md">
+                    <i class="fa-regular fa-calendar-days text-sm"></i>
+                    <span>Schedule an Inspection</span>
+                </a>
+            </div>
+        </header>
+
+        <!-- MAIN HERO CONTENT -->
+        <main class="relative z-10 w-full px-4 sm:px-8 lg:px-14 py-10 my-auto">
+            <div class="max-w-2xl">
+                
+                <!-- Eyebrow Tagline -->
+                <div class="flex items-center gap-2.5 text-xs font-bold uppercase tracking-widest text-gray-300 mb-3">
+                    <span class="w-7 h-[2px] bg-brandRed inline-block"></span>
+                    <span>South Florida Property Inspections</span>
+                </div>
+
+                <!-- Primary Headline -->
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.08] mb-5">
+                    Know the property.<br>
+                    <span class="text-brandRed">Move forward<br>with confidence.</span>
+                </h1>
+
+                <!-- Subheading Description -->
+                <p class="text-gray-300 text-xs sm:text-sm md:text-base leading-relaxed max-w-lg mb-8 font-normal">
+                    Detailed property inspections, straightforward communication, and convenient online scheduling for homebuyers, property owners, and real estate professionals across South Florida.
+                </p>
+
+                <!-- Dual Action Buttons -->
+                <div class="flex flex-wrap items-center gap-3.5 mb-6">
+                    <!-- Primary Red Button -->
+                    <a href="#schedule" class="inline-flex items-center justify-center gap-2.5 bg-brandRed hover:bg-brandRedHover text-white text-xs sm:text-sm font-bold uppercase tracking-wider px-5 sm:px-6 py-3.5 rounded transition shadow-lg">
+                        <i class="fa-regular fa-calendar-days text-base"></i>
+                        <span>Schedule an Inspection</span>
+                        <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
+                    </a>
+
+                    <!-- Secondary Transparent Button -->
+                    <a href="#services" class="inline-flex items-center justify-center gap-2.5 bg-black/40 hover:bg-black/70 border border-white/40 hover:border-white text-white text-xs sm:text-sm font-bold uppercase tracking-wider px-5 sm:px-6 py-3.5 rounded transition backdrop-blur-sm">
+                        <span>Explore Our Services</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service Counties Indicator -->
+                <div class="flex items-center gap-2 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-gray-300">
+                    <i class="fa-solid fa-location-dot text-brandRed"></i>
+                    <span>Serving Brevard, St. Lucie, Martin, Palm Beach & Broward Counties</span>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- BOTTOM CREDENTIALS BAR -->
+        <footer class="relative z-10 w-full border-t border-white/10 bg-black/60 backdrop-blur-md px-4 sm:px-8 lg:px-14 py-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-8 max-w-6xl">
+                
+                <!-- Item 1: Certified -->
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-award text-2xl text-brandRed"></i>
+                    <div>
+                        <div class="text-xs sm:text-sm font-bold text-white tracking-tight">Certified</div>
+                        <div class="text-[10px] sm:text-xs text-gray-400">Home Inspector</div>
+                    </div>
+                </div>
+
+                <!-- Item 2: Inspection Categories -->
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-house-chimney text-2xl text-brandRed"></i>
+                    <div>
+                        <div class="text-xs sm:text-sm font-bold text-white tracking-tight">6 Inspection Categories</div>
+                        <div class="text-[10px] sm:text-xs text-gray-400">Residential to Commercial</div>
+                    </div>
+                </div>
+
+                <!-- Item 3: Digital Reports -->
+                <div class="flex items-center gap-3">
+                    <i class="fa-regular fa-file-lines text-2xl text-brandRed"></i>
+                    <div>
+                        <div class="text-xs sm:text-sm font-bold text-white tracking-tight">Digital Reports</div>
+                        <div class="text-[10px] sm:text-xs text-gray-400">Easy-to-review findings</div>
+                    </div>
+                </div>
+
+                <!-- Item 4: South Florida Coverage -->
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-map-location-dot text-2xl text-brandRed"></i>
+                    <div>
+                        <div class="text-xs sm:text-sm font-bold text-white tracking-tight">South Florida</div>
+                        <div class="text-[10px] sm:text-xs text-gray-400">Five counties served</div>
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
