@@ -4,188 +4,194 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pro1 Inspections | South Florida Property Inspections</title>
-    
-    <!-- Import Google Font: Montserrat -->
+
+    <!-- 1. Google Fonts: Montserrat (Weights: 400, 600, 700, 800) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,800&display=swap" rel="stylesheet">
-    
-    <!-- Import FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- Load Tailwind CSS -->
-    <script src="file:///C:/Users/dusti/OneDrive/Desktop/Complete/Luxury%20Inspection%20Truck%20at%20Sunset.png"></script>
-    
-    <!-- Configure Tailwind with custom brand colors and fonts -->
+    <!-- 2. FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- 3. Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        brandRed: '#da291c', // A vibrant, professional red matching the reference
-                        overlayDark: 'rgba(15, 15, 15, 0.9)',
-                        overlayLight: 'rgba(15, 15, 15, 0.2)'
-                    },
                     fontFamily: {
                         sans: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        brandRed: '#e52322', // Primary brand red
+                        brandRedHover: '#c81b1a',
+                        brandDark: '#0e1118',
                     }
                 }
             }
         }
     </script>
 </head>
-<body class="bg-black text-white font-sans antialiased overflow-x-hidden">
+<body class="bg-black text-white font-sans antialiased m-0 p-0 selection:bg-brandRed selection:text-white">
 
-    <!-- HERO WRAPPER -->
-    <div class="relative w-full min-h-screen flex flex-col justify-between">
-        
-        <!-- Background Image Layer -->
+    <!-- HERO SECTION CONTAINER -->
+    <div class="relative min-h-screen flex flex-col justify-between overflow-hidden">
+
+        <!-- BACKGROUND LAYER: Image & Readability Gradients -->
         <div class="absolute inset-0 z-0">
-            <!-- Using the exact file name provided for the background -->
-            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('Luxury Inspection Truck at Sunset.png');"></div>
-            
-            <!-- Gradient Overlay: Dark on the left for text readability, fading to the right -->
-            <div class="absolute inset-0 bg-gradient-to-r from-black via-overlayDark to-overlayLight lg:from-[#0a0a0a] lg:via-[#0a0a0a]/80 lg:to-transparent"></div>
+            <!-- 
+                Image Source Options:
+                Option A (Recommended): Place the image in the same directory as this index.html file:
+                src="Luxury Inspection Truck at Sunset.png"
+                
+                Option B: Direct local file path URL:
+                src="file:///C:/Users/dusti/OneDrive/Desktop/Complete/Luxury%20Inspection%20Truck%20at%20Sunset.png"
+            -->
+            <img 
+                src="Luxury Inspection Truck at Sunset.png" 
+                alt="Pro1 Inspections Truck at Sunset" 
+                class="w-full h-full object-cover object-center"
+            >
+
+            <!-- Dark gradient overlay from left-to-right to ensure text contrast -->
+            <div class="absolute inset-0 bg-gradient-to-r from-black via-black/85 md:via-black/75 to-transparent"></div>
+
+            <!-- Soft top and bottom vignetting for header and footer readability -->
+            <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/90"></div>
         </div>
 
-        <!-- 1. TOP NAVIGATION (z-index ensures it sits above the background) -->
-        <nav class="relative z-10 w-full px-6 py-6 lg:px-16 flex items-center justify-between">
+        <!-- HEADER / NAVIGATION -->
+        <header class="relative z-10 w-full px-4 sm:px-8 lg:px-14 py-5 flex items-center justify-between">
             
-            <!-- Logo area -->
-            <div class="flex flex-col leading-none cursor-pointer">
-                <div class="text-3xl lg:text-4xl font-black italic tracking-tighter">
-                    <span class="text-white">PRO</span><span class="text-brandRed">#1</span>
+            <!-- Logo -->
+            <a href="#" class="flex flex-col">
+                <div class="text-2xl sm:text-3xl font-black tracking-tight leading-none">
+                    PRO<span class="text-brandRed">#1</span>
                 </div>
-                <div class="text-[0.65rem] lg:text-[0.7rem] text-white tracking-[0.35em] mt-1 font-bold">
-                    INSPECTIONS
+                <div class="text-[9px] sm:text-[10px] tracking-[0.28em] font-semibold text-gray-300 uppercase mt-0.5">
+                    Inspections
                 </div>
-            </div>
+            </a>
 
-            <!-- Center Navigation Links (Hidden on smaller screens for responsive design) -->
-            <div class="hidden lg:flex items-center space-x-8 text-sm font-semibold tracking-wide">
-                <div class="flex flex-col items-center">
-                    <a href="#" class="text-brandRed hover:text-red-400 transition">Home</a>
-                    <div class="w-full h-0.5 bg-brandRed mt-1 rounded"></div>
-                </div>
-                <a href="#" class="text-gray-200 hover:text-white transition flex items-center">
-                    Services <i class="fa-solid fa-chevron-down ml-2 text-xs"></i>
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden xl:flex items-center gap-7 text-[13px] font-semibold tracking-wide">
+                <a href="#home" class="text-brandRed border-b-2 border-brandRed pb-1">Home</a>
+                <a href="#services" class="text-gray-200 hover:text-white transition flex items-center gap-1.5">
+                    Services <i class="fa-solid fa-chevron-down text-[10px] text-gray-400"></i>
                 </a>
-                <a href="#" class="text-gray-200 hover:text-white transition">About Us</a>
-                <a href="#" class="text-gray-200 hover:text-white transition">Pricing</a>
-                <a href="#" class="text-gray-200 hover:text-white transition">Sample Report</a>
-                <a href="#" class="text-gray-200 hover:text-white transition">FAQ</a>
-                <a href="#" class="text-gray-200 hover:text-white transition">Contact</a>
-            </div>
+                <a href="#about" class="text-gray-200 hover:text-white transition">About Us</a>
+                <a href="#pricing" class="text-gray-200 hover:text-white transition">Pricing</a>
+                <a href="#sample-report" class="text-gray-200 hover:text-white transition">Sample Report</a>
+                <a href="#faq" class="text-gray-200 hover:text-white transition">FAQ</a>
+                <a href="#contact" class="text-gray-200 hover:text-white transition">Contact</a>
+            </nav>
 
-            <!-- Right Actions (Phone & Button) -->
-            <div class="hidden lg:flex items-center space-x-8">
-                <!-- Phone -->
-                <div class="flex items-center space-x-3">
-                    <i class="fa-solid fa-phone text-brandRed text-xl"></i>
-                    <div class="flex flex-col">
-                        <span class="font-bold text-lg leading-tight">(772) 272-1600</span>
-                        <span class="text-[0.65rem] tracking-wider text-gray-300 font-bold uppercase leading-tight">Call or Text</span>
+            <!-- Phone Contact & CTA Button -->
+            <div class="flex items-center gap-5 sm:gap-7">
+                <!-- Phone Info -->
+                <a href="tel:7722721600" class="flex items-center gap-3 text-left group">
+                    <i class="fa-solid fa-phone text-brandRed text-base sm:text-lg group-hover:scale-110 transition-transform"></i>
+                    <div>
+                        <div class="text-xs sm:text-sm font-bold tracking-tight text-white group-hover:text-brandRed transition">
+                            (772) 272-1600
+                        </div>
+                        <div class="text-[9px] tracking-wider font-semibold text-gray-400 uppercase">
+                            Call or Text
+                        </div>
                     </div>
-                </div>
-                
-                <!-- Nav Button -->
-                <button class="bg-brandRed hover:bg-red-700 text-white font-bold text-xs tracking-wider py-3 px-6 rounded transition flex items-center shadow-lg">
-                    <i class="fa-regular fa-calendar-days mr-2 text-lg"></i>
-                    SCHEDULE AN INSPECTION
-                </button>
-            </div>
-            
-            <!-- Mobile Menu Toggle (Visible only on small screens) -->
-            <div class="lg:hidden z-10 text-2xl cursor-pointer">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-        </nav>
+                </a>
 
-        <!-- 2. MAIN HERO CONTENT -->
-        <main class="relative z-10 flex-grow flex items-center px-6 lg:px-16 w-full max-w-7xl mx-auto py-12 lg:py-0">
-            <div class="max-w-2xl w-full">
+                <!-- Header Booking Button -->
+                <a href="#schedule" class="hidden sm:inline-flex items-center gap-2 bg-brandRed hover:bg-brandRedHover text-white text-[11px] font-bold uppercase tracking-wider px-4 py-2.5 rounded transition shadow-md">
+                    <i class="fa-regular fa-calendar-days text-sm"></i>
+                    <span>Schedule an Inspection</span>
+                </a>
+            </div>
+        </header>
+
+        <!-- MAIN HERO CONTENT -->
+        <main class="relative z-10 w-full px-4 sm:px-8 lg:px-14 py-10 my-auto">
+            <div class="max-w-2xl">
                 
-                <!-- Subtitle with Red Line -->
-                <div class="flex items-center mb-6">
-                    <div class="w-8 lg:w-12 h-0.5 bg-brandRed mr-4"></div>
-                    <h3 class="text-xs lg:text-sm font-bold tracking-[0.2em] uppercase text-gray-200">
-                        South Florida Property Inspections
-                    </h3>
+                <!-- Eyebrow Tagline -->
+                <div class="flex items-center gap-2.5 text-xs font-bold uppercase tracking-widest text-gray-300 mb-3">
+                    <span class="w-7 h-[2px] bg-brandRed inline-block"></span>
+                    <span>South Florida Property Inspections</span>
                 </div>
 
-                <!-- Main Headings -->
-                <h1 class="text-5xl lg:text-7xl font-extrabold leading-[1.1] mb-2 tracking-tight">
-                    Know the property.
+                <!-- Primary Headline -->
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.08] mb-5">
+                    Know the property.<br>
+                    <span class="text-brandRed">Move forward<br>with confidence.</span>
                 </h1>
-                <h2 class="text-5xl lg:text-7xl font-extrabold leading-[1.1] text-brandRed mb-6 tracking-tight">
-                    Move forward<br>with confidence.
-                </h2>
 
-                <!-- Paragraph -->
-                <p class="text-gray-300 text-base lg:text-lg mb-10 leading-relaxed max-w-xl font-medium">
+                <!-- Subheading Description -->
+                <p class="text-gray-300 text-xs sm:text-sm md:text-base leading-relaxed max-w-lg mb-8 font-normal">
                     Detailed property inspections, straightforward communication, and convenient online scheduling for homebuyers, property owners, and real estate professionals across South Florida.
                 </p>
 
-                <!-- Action Buttons -->
-                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-5 mb-10">
-                    <button class="bg-brandRed hover:bg-red-700 text-white font-bold text-sm tracking-wide py-4 px-6 rounded transition flex items-center justify-center sm:justify-start shadow-lg shadow-brandRed/30 group">
-                        <i class="fa-regular fa-calendar-days mr-3 text-xl"></i>
-                        SCHEDULE AN INSPECTION
-                        <i class="fa-solid fa-arrow-right ml-4 group-hover:translate-x-1 transition-transform"></i>
-                    </button>
-                    
-                    <button class="bg-transparent border border-gray-400 hover:border-white hover:bg-white/10 text-white font-bold text-sm tracking-wide py-4 px-6 rounded transition flex items-center justify-center sm:justify-start group">
-                        EXPLORE OUR SERVICES
-                        <i class="fa-solid fa-arrow-right ml-4 group-hover:translate-x-1 transition-transform"></i>
-                    </button>
+                <!-- Dual Action Buttons -->
+                <div class="flex flex-wrap items-center gap-3.5 mb-6">
+                    <!-- Primary Red Button -->
+                    <a href="#schedule" class="inline-flex items-center justify-center gap-2.5 bg-brandRed hover:bg-brandRedHover text-white text-xs sm:text-sm font-bold uppercase tracking-wider px-5 sm:px-6 py-3.5 rounded transition shadow-lg">
+                        <i class="fa-regular fa-calendar-days text-base"></i>
+                        <span>Schedule an Inspection</span>
+                        <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
+                    </a>
+
+                    <!-- Secondary Transparent Button -->
+                    <a href="#services" class="inline-flex items-center justify-center gap-2.5 bg-black/40 hover:bg-black/70 border border-white/40 hover:border-white text-white text-xs sm:text-sm font-bold uppercase tracking-wider px-5 sm:px-6 py-3.5 rounded transition backdrop-blur-sm">
+                        <span>Explore Our Services</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
                 </div>
 
-                <!-- Location Pin Text -->
-                <div class="flex items-center text-xs lg:text-sm font-bold tracking-widest text-gray-300 uppercase">
-                    <i class="fa-solid fa-location-dot text-brandRed mr-3 text-lg"></i>
-                    Serving Brevard, St. Lucie, Martin, Palm Beach & Broward Counties
+                <!-- Service Counties Indicator -->
+                <div class="flex items-center gap-2 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-gray-300">
+                    <i class="fa-solid fa-location-dot text-brandRed"></i>
+                    <span>Serving Brevard, St. Lucie, Martin, Palm Beach & Broward Counties</span>
                 </div>
+
             </div>
         </main>
 
-        <!-- 3. BOTTOM FEATURES BAR -->
-        <footer class="relative z-10 w-full bg-black/60 backdrop-blur-sm border-t border-white/10 py-6 lg:py-8 px-6 lg:px-16 mt-12 lg:mt-0">
-            <!-- Grid container with vertical dividers on large screens -->
-            <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0 lg:divide-x lg:divide-white/20">
+        <!-- BOTTOM CREDENTIALS BAR -->
+        <footer class="relative z-10 w-full border-t border-white/10 bg-black/60 backdrop-blur-md px-4 sm:px-8 lg:px-14 py-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-8 max-w-6xl">
                 
-                <!-- Feature 1 -->
-                <div class="flex items-center space-x-4 lg:px-6 xl:px-10 first:pl-0">
-                    <i class="fa-solid fa-certificate text-brandRed text-4xl lg:text-5xl"></i>
+                <!-- Item 1: Certified -->
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-award text-2xl text-brandRed"></i>
                     <div>
-                        <h4 class="font-bold text-white tracking-wide">Certified</h4>
-                        <p class="text-sm text-gray-400 font-medium mt-0.5">Home Inspector</p>
+                        <div class="text-xs sm:text-sm font-bold text-white tracking-tight">Certified</div>
+                        <div class="text-[10px] sm:text-xs text-gray-400">Home Inspector</div>
                     </div>
                 </div>
 
-                <!-- Feature 2 -->
-                <div class="flex items-center space-x-4 lg:px-6 xl:px-10">
-                    <i class="fa-solid fa-house text-brandRed text-4xl lg:text-5xl"></i>
+                <!-- Item 2: Inspection Categories -->
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-house-chimney text-2xl text-brandRed"></i>
                     <div>
-                        <h4 class="font-bold text-white tracking-wide">6 Inspection Categories</h4>
-                        <p class="text-sm text-gray-400 font-medium mt-0.5">Residential to Commercial</p>
+                        <div class="text-xs sm:text-sm font-bold text-white tracking-tight">6 Inspection Categories</div>
+                        <div class="text-[10px] sm:text-xs text-gray-400">Residential to Commercial</div>
                     </div>
                 </div>
 
-                <!-- Feature 3 -->
-                <div class="flex items-center space-x-4 lg:px-6 xl:px-10">
-                    <i class="fa-regular fa-file-lines text-brandRed text-4xl lg:text-5xl"></i>
+                <!-- Item 3: Digital Reports -->
+                <div class="flex items-center gap-3">
+                    <i class="fa-regular fa-file-lines text-2xl text-brandRed"></i>
                     <div>
-                        <h4 class="font-bold text-white tracking-wide">Digital Reports</h4>
-                        <p class="text-sm text-gray-400 font-medium mt-0.5">Easy-to-review findings</p>
+                        <div class="text-xs sm:text-sm font-bold text-white tracking-tight">Digital Reports</div>
+                        <div class="text-[10px] sm:text-xs text-gray-400">Easy-to-review findings</div>
                     </div>
                 </div>
 
-                <!-- Feature 4 -->
-                <div class="flex items-center space-x-4 lg:px-6 xl:px-10">
-                    <i class="fa-solid fa-map-location-dot text-brandRed text-4xl lg:text-5xl"></i>
+                <!-- Item 4: South Florida Coverage -->
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-map-location-dot text-2xl text-brandRed"></i>
                     <div>
-                        <h4 class="font-bold text-white tracking-wide">South Florida</h4>
-                        <p class="text-sm text-gray-400 font-medium mt-0.5">Five counties served</p>
+                        <div class="text-xs sm:text-sm font-bold text-white tracking-tight">South Florida</div>
+                        <div class="text-[10px] sm:text-xs text-gray-400">Five counties served</div>
                     </div>
                 </div>
 
