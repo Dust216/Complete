@@ -47,6 +47,36 @@
         .hero-overlay {
             background: linear-gradient(135deg, rgba(14,17,24,0.95) 0%, rgba(14,17,24,0.75) 50%, rgba(14,17,24,0.92) 100%);
         }
+
+/* Wix embedded homepage: prevent the internal
+   header from sticking inside the iframe */
+
+.header-sticky {
+  position: relative !important;
+  top: auto !important;
+}
+
+/* Keep content within the mobile viewport */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  overflow-x: clip;
+}
+
+@media (max-width: 767px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-grid > * {
+    min-width: 0;
+  }
+}
+
     </style>
 </head>
 <body class="bg-brandDark text-gray-100 font-sans antialiased min-h-screen flex flex-col selection:bg-brandRed selection:text-white">
